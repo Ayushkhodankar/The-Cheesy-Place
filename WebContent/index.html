@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Cheesy Place</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+
+<script>
+//alert box
+/**function myFunction() {
+	  alert("User Registered Successfully!!");
+	}*/
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
+
+<style>
+
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
+.menu {display: none}
+.bgimg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("img/pizza.jpg");
+  min-height: 90%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 12%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+/* non veg icons**/
+.non-veg-indian-vegetarian:before {content: "\22a1";color:red;}
+.veg-vegetarian:before {content: "\24cb";color:red;}
+.vegetarianicon {font-family:"vegetarian";color:red;}
+</style>
+
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#myMap" class="w3-bar-item w3-button">CONTACT</a>
+    <a href="#register" onclick="document.getElementById('register').style.display='block'" style="width:auto;"  class="w3-bar-item w3-button">REGISTER</a>
+   <a href="#login" onclick="document.getElementById('login').style.display='block'" style="width:auto;  float: right;" class="w3-bar-item w3-button">LOGIN</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-padding">
+    <span class="w3-tag w3-xlarge">Open from 10am to 12pm</span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">the<br>CHEESY PLACE</span>
+    <span class="w3-text-white w3-hide-large w3-hide-medium" style="font-size:60px"><b>the<br>CHEESY PLACE</b></span>
+    <p><a href="#menu" class="w3-button w3-xxlarge w3-black">Jump To Menu From Here</a></p>
+  </div>
+</header>
+
+<!-- Register Block -->
+
+<div id="register" class="modal">
+  
+  <form class="modal-content animate" action="adduser" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('register').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img/personal.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+    <label for="name"><b>Enter Full Name</b></label>
+      <input type="text" placeholder="Enter Full Name" name="name" required>
+      
+      <label for="email"><b>Enter E-Mail</b></label>
+      <input type="text" placeholder="Enter E-mail" name="email" required>
+      
+      <label for="mobno"><b>Enter Phone No.</b></label>
+      <input type="text" placeholder="Enter Mobile No." name="mobno" required>
+         
+      <label for="uname"><b>Enter Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="pass"><b>Enter Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pass" required>
+        
+      <button type="submit" onclick="myFunction()">Register</button>
+     
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('register').style.display='none'" class="cancelbtn">Cancel</button>
+     
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Login Block -->
+
+<div id="login" class="modal">
+  
+  <form class="modal-content animate" action="login" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img/login.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pizza');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Pasta');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Pasta</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Starter');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Beverages</div>
+      </a>
+    </div>
+
+    <div id="Pizza" class="w3-container menu w3-padding-32 w3-white" style="">
+      <h1><b><span class="veg-indian-vegetarian"></span> Margherita</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 189</span></h1>
+      <p class="w3-text-grey">Classic Cheese</p>
+      <hr>
+   
+      <h1><b><span class="veg-indian-vegetarian"></span> Veg Exotica</b> <span class="w3-tag w3-red w3-round">Hot!</span> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 329</span></h1>
+      <p class="w3-text-grey">Herbed Onion & Green Capsicum, Sweet Corn, Tomato & Mushroom With Double Cheese</p>
+      <hr>
+      
+      <h1><b><span class="veg-indian-vegetarian"></span> Country Feast</b>  <span class="w3-tag w3-grey w3-round">New</span> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;  399</span></h1>
+      <p class="w3-text-grey">Herbed Onion & Green Capsicum,Fresh Tomatoes,Baby Corn & Onions</p>
+      <hr>
+
+      <h1><b><span class="non-veg-indian-vegetarian" style=' .veg-indian-vegetarian:before{content: "\22a1";color:red;} .veg-vegetarian:before {content: "\24cb";color:red;} .vegetarianicon {font-family:"vegetarian";color:red;}'></span>  Chicken N Corn Delight</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 349</span></h1>
+      <p class="w3-text-grey">Herbed Chicken,Sweet Corn& Green Capsicum</p>
+      <hr>
+
+      <h1><b><span class="non-veg-indian-vegetarian"></span>Chicken Pepper Crunch</b> <span class="w3-tag w3-red w3-round">Hot!</span><span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;  399</span></h1>
+      <p class="w3-text-grey">Herbed Chicken,Green Capsicum,Onion & Red Capsicum</p>
+      <hr>
+
+      <h1><b><span class="non-veg-indian-vegetarian"></span>Italican Chicken Feast</b> <span class="w3-tag w3-grey w3-round">New</span><span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 459</span></h1>
+      <p class="w3-text-grey">Chicken Sausage,Chicken Pepparani,Sweet Corn,Black Olives & Jalapeno</p>
+    </div>
+
+    <div id="Pasta" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b><span class="veg-indian-vegetarian"></span>Spiced Tomato Twist</b> <span class="w3-tag w3-grey w3-round">Popular</span> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;  149</span></h1>
+      <p class="w3-text-grey">Tangy Red Sause Pasta Infused With Herbs & Spices,Topped With Onion, Green & Red Capsicum</p>
+      <hr>
+   
+      <h1><b><span class="veg-indian-vegetarian"></span>Cheesy Comfort</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 169</span></h1>
+      <p class="w3-text-grey">White Cheese Pasta Topped With Onion,Green & Red Capsicum & Sweet Corn</p>
+      <hr>
+      
+      <h1><b><span class="veg-indian-vegetarian"></span>Creamy Mushroom</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;  199</span></h1>
+      <p class="w3-text-grey">Rich Creamy Mushroom Sauce Flavoured With Garlic & parsley</p>
+      <hr>
+
+      <h1><b><span class="non-veg-indian-vegetarian"></span>Seafood pasta</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 269</span></h1>
+      <p class="w3-text-grey">Salmon, shrimp, lobster, garlic</p>
+    </div>
+
+
+    <div id="Starter" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Lemon Mint Mojito</b><span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 149</span></h1>
+      <p class="w3-text-grey">Classic Mojito</p>
+      <hr>
+   
+      <h1><b>Jamutini</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;  139</span></h1>
+      <p class="w3-text-grey">Fresh Blast Of Jamun With A Hint OF Refreshing Mint</p>
+      <hr>
+      
+      <h1><b>Fresh Lime</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377;  119</span></h1>
+      <p class="w3-text-grey">Sweet Salted Or Mixed With Water Or Soda</p>
+      <hr>
+      
+      <h1><b>Lipton Iced Tea</b> <span class="w3-right w3-tag w3-dark-grey w3-round">&#8377; 89</span></h1>
+      <p class="w3-text-grey">Classic Lipton Green Tea</p>
+    </div><br>
+
+  </div>
+</div>
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-red w3-grayscale w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+    <p>The Cheesy Place Pizza is all about quality you can trust.Our sole mission is making the freshest, tastiest and funnest Pizza around.<br/>
+
+Our classic pan pizza will always be a fan favourite, with a soft and chewy crust perfectly balancing out the healthy tomato pure and mozzarella.
+<br/>
+Our authentic Italian crust for those who would prefer a light and airy crust to more fully enjoy the toppings. Thin, light and delicious.
+<br/>
+Our newest addition of Puree sauces will blow your mind. Chose between a spicy buffalo, sweet bbq, tangy chipotle can creamy makhni to perfectly compliment your toppings and crust. 
+
+<br/><br/>Our suggestions of combinations might be helpful but ultimately the power lies with you.
+
+Our outlets designed by leading architects to reflect our philosophy of being open and inviting, while putting our customer comfort on priority.
+
+Everywhere we go, we hear ‘Your pizza is the tastiest pizza around, why aren’t you open in my location’. The answer is simple, every outlet opened is a promise to our customer, and not one we </p>
+    <p><strong>The Chef?</strong>  Mr. Anthony Felix Gemignani<img src="img/download.jpg" style="width:150px" class="w3-circle w3-right" alt="Chef"></p>
+    <p>We are proud of our interiors.</p>
+    <img src="img/pizzaimg.jpg" style="width:100%" class="w3-margin-top w3-margin-bottom" alt="Restaurant">
+    <h1><b>Opening Hours</b></h1>
+    
+    <div class="w3-row">
+      <div class="w3-col s6">
+        <p>Monday Closed</p>
+        <p>Tuesday 10.00 - 23.00</p>
+        <p>Wednesday 10.00 - 23.00</p>
+        <p>Thursday 10:00 - 23:00</p>
+      </div>
+      <div class="w3-col s6">
+        <p>Friday 10:00 - 22:00</p>
+        <p>Saturday 10:00 - 22:00</p>
+        <p>Sunday 09:00-00.00</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="img/map1.jpg" class="w3-image w3-greyscale" style="width:100%;"  >
+
+<!-- Contact -->
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge" id="myMap">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
+    <p>Find us at <br/>The Cheesy Place,Times Square,New York<br> Call us at 05050515-122330</p>
+    <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+    <p class="w3-xxlarge"><strong>Book</strong> a table By Just Registering to our Site</p>
+   <!--  <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-block" type="submit">SEND MESSAGE</button></p>
+    </form> -->
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-xxlarge">
+  <p>	&#169;Powered by <a href="https://www.pizzahut.co.in" title="the cheesy place" target="_blank" class="w3-hover-text-green">the cheesy place</a></p>
+</footer>
+
+
+
+</body>
+</html>
